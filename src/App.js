@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import BlogCard from './blogCard';
 
 function App() {
 
@@ -23,13 +24,14 @@ function App() {
 
   ];
 
-  const blogCards = blogArr.map((item)=> {
+  const blogCards = blogArr.map((item,pos)=> {
 
     return(
-      <div className='blogCard' key={item.id}>
-        <h3>{item.title}</h3>
-        <p>{item.desc}</p>
-      </div>
+      <BlogCard key={pos}/>
+      // <div className='blogCard' key={item.id}>
+      //   <h3>{item.title}</h3>
+      //   <p>{item.desc}</p>
+      // </div>
     )
   })
 
