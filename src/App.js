@@ -2,22 +2,40 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const blogArr =[
+
+    {
+      id:1,
+      title: 'Blog Title 1',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat iaculis turpis semper bibendum.'
+    },
+    {
+      id:2,
+      title: 'Blog Title 2',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat iaculis turpis semper bibendum.'
+    },
+    {
+      id:3,
+      title: 'Blog Title 3',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat iaculis turpis semper bibendum.'
+    }
+
+  ];
+
+  const blogCards = blogArr.map((item)=> {
+
+    return(
+      <div className='blogCard' key={item.id}>
+        <h3>{item.title}</h3>
+        <p>{item.desc}</p>
+      </div>
+    )
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {blogCards}
     </div>
   );
 }
