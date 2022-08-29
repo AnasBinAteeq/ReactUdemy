@@ -5,7 +5,19 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
     background-color: aquamarine;
+    font-size: 24px;
   }
+
+.blogCard > button {
+    color: white;
+    background-color: black;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.likeCount {
+    font-weight: 600;
+}
 
 @media (min-width: 992px){
     .blogCard{
