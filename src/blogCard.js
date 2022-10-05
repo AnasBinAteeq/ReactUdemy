@@ -2,31 +2,24 @@ import React, { Component } from "react"
 import { dumplogs } from "./util";
 import classes from './BlogCard.module.css'
 
-class BlogCard extends Component{
+const BlogCard = (props) => {
 
-   state = {
-    likeCount : 0
-   }
+  // onLikeBtnClick = () => {
+  //   this.setState((prevState, prevProp) =>{
+  //     return {likeCount : prevState.likeCount+1}
+  //   });
+  //  }
 
-   onLikeBtnClick = () => {
-    this.setState((prevState, prevProp) =>{
-      return {likeCount : prevState.likeCount+1}
-    });
-   }
+  dumplogs(props);
 
-    render(){
-
-      dumplogs(this.props);
-
-      return(
-        <div className={classes.blogCard}>
-          <h3>{this.props.title}</h3>
-          <p>{this.props.description}</p>
-          <p>Like Count: <span className={classes.likeCount}>{this.state.likeCount}</span></p>
-          <button onClick={this.onLikeBtnClick}>Like</button>
-        </div>
-      )
-    }
+  return(
+   <div className={classes.blogCard}>
+     <h3>{props.title}</h3>
+     <p>{props.description}</p>
+     <p>Like Count: <span className={classes.likeCount}>{props.likeCount}</span></p>
+     <button onClick={props.onLikeBtnClick}>Like</button>
+   </div>
+   )
   }
 
 export default BlogCard;
